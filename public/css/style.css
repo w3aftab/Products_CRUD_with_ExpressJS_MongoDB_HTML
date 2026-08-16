@@ -1,0 +1,93 @@
+body {
+  max-width: 1080px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+}
+header {
+  padding: 20px;
+}
+header .logo {
+  margin: auto;
+  font-style: italic;
+}
+header a {
+  float: right;
+  text-align: center;
+}
+a[type="button"] {
+  display: inline-block;
+  margin: 0 !important;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.flex-items {
+  flex-basis: 100%;
+}
+.card.flex .flex-items:has(img) {
+  flex-basis: content;
+}
+.card {
+  background-color: initial;
+  position: relative;
+}
+.card [type="button"] {
+  position: absolute;
+  bottom: 20px;
+}
+article .image {
+  width: 200px;
+  aspect-ratio: 1;
+  margin: auto;
+}
+#selected-product article .image {
+  width: 300px;
+}
+article .image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#selected-product .card [type="button"] {
+  visibility: hidden;
+}
+.details-btn-control {
+  text-align: right;
+}
+#form-update-product {
+  visibility: hidden;
+}
+form,
+form > fieldset {
+  width: 100%;
+}
+form label {
+  width: 30%;
+}
+form input {
+  width: 90%;
+  float: right;
+}
+.form-control-btn {
+  text-align: right;
+}
+button,
+[type="button"],
+[type="submit"] {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .main.flex {
+    display: block;
+  }
+  .home-items-img {
+    width: 150px;
+  }
+}
