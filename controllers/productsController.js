@@ -1,8 +1,10 @@
 import Product from "../models/Product.js";
 
 export const getProducts = async (req, res) => {
+  const { sort } = req.query;
+  const sortString = sort?.replaceAll(",", " ") || "-createdAt";
   try {
-    const products = await Product.find().sort({ createdAt: -1 });
+    const products = await Product.find().sort(sortString);
     res.status(200).send(products);
   } catch (error) {
     console.log("Products not found!", error);
@@ -40,7 +42,7 @@ export const updateProduct = async (req, res) => {
       req.body,
       {
         returnDocument: "after",
-      },
+      }
     );
     console.log("Product Updated");
     res

@@ -1,11 +1,14 @@
 import { displayProduct } from "./Modules.mjs";
 
 const htmlAllProducts = document.getElementById("all-products");
+const sortSelect = document.getElementById("sort");
 
 // GET PRODUCT
 const fetchProducts = async () => {
   try {
-    const response = await fetch("/api/v1/products");
+    const sortValue = sortSelect.value;
+    const URL = `/api/v1/products?sort=${encodeURIComponent(sortValue)}`;
+    const response = await fetch(URL);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -16,6 +19,8 @@ const fetchProducts = async () => {
     console.log(error);
   }
 };
+
+sortSelect.addEventListener("change", fetchProducts);
 fetchProducts();
 
 //  ADD PRODUCT
