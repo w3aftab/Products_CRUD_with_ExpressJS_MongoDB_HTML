@@ -23,7 +23,7 @@ a[type="button"] {
 .flex {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
 }
 .flex-items {
@@ -31,6 +31,9 @@ a[type="button"] {
 }
 .card.flex .flex-items:has(img) {
   flex-basis: content;
+}
+.main.flex {
+  align-items: flex-start;
 }
 .card {
   background-color: initial;
@@ -63,27 +66,14 @@ article .image > img {
 #form-update-product {
   visibility: hidden;
 }
-form,
-form > fieldset {
-  width: 100%;
-}
-form label {
-  width: 30%;
-}
-form input {
-  width: 90%;
-  float: right;
-}
-.form-control-btn {
-  text-align: right;
-}
+
 button,
 [type="button"],
 [type="submit"] {
   font-size: 1rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
   .main.flex {
     display: block;
   }

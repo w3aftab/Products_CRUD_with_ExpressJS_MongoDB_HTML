@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://w3aftab.github.io/default-html-styling/basic.min.css"
+      href="https://w3aftab.github.io/default-html-styling-II/style.css"
     />
     <link rel="stylesheet" href="/css/style.css" />
     <title>REST API Products - Details</title>
   </head>
   <body>
-    <header class="flex">
+    <header>
       <h1 class="flex-items logo">REST API Products</h1>
-      <div class="flex-items navbar">
-        <a type="button" href="/index">Home</a>
-      </div>
     </header>
+    <nav>
+      <ul>
+        <li>
+          <a type="button" href="/index">Home</a>
+        </li>
+      </ul>
+    </nav>
 
     <section>
       <h2>Product Details</h2>
@@ -27,6 +31,7 @@
         <button id="delete-btn">Delete</button>
       </div>
     </section>
+
     <section id="form-update-product">
       <h2>Update Product</h2>
       <form method="POST" id="form-update">
