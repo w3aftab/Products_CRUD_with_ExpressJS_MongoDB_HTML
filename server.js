@@ -38,23 +38,18 @@ app.use(cors());
 app.use("/api/v1/products", productsRoute);
 
 // HTML FILES
-const routesHTML = async (...pageNames) => {
-  try {
-    await pageNames.map((pageName) => {
-      const pageUrl = path.join(
-        import.meta.dirname,
-        "public",
-        `${pageName}.html`,
-      );
-      app.get(`/${pageName}`, (req, res) => res.sendFile(pageUrl));
-      app.get(`/${pageName}/:id`, (req, res) => res.sendFile(pageUrl));
-    });
-  } catch (error) {
-    console.error("Name not found!");
-  }
-  // res.redirect("/details.html");
+const routesHTML = (...pageNames) => {
+  pageNames.forEach((pageName) => {
+    const pageUrl = path.join(
+      import.meta.dirname,
+      "public",
+      `${pageName}.html`
+    );
+    app.get(`/${pageName}`, (req, res) => res.sendFile(pageUrl));
+    app.get(`/${pageName}/:id`, (req, res) => res.sendFile(pageUrl));
+  });
 };
-routesHTML("index", "details", "test", "others");
+routesHTML("details", "test", "others");
 
 app.all("/*path", (req, res) => {
   res.status(404).send("404, not found!");
