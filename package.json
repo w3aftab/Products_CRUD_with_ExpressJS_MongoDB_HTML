@@ -1,7 +1,7 @@
 {
   "name": "Products_CRUD_ExpressJS_HTML",
-  "version": "1.3.0",
-  "description": "'Search by name' and 'Maximum price' feature added",
+  "version": "1.3.1",
+  "description": "Some bug fixes",
   "license": "ISC",
   "author": "Aftab",
   "type": "module",
@@ -12,10 +12,9 @@
   },
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.9.2"
   },
-  "devDependencies": {
-    "dotenv": "^17.4.2"
-  }
+  "devDependencies": {}
 }
