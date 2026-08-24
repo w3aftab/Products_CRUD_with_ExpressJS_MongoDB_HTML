@@ -53,7 +53,23 @@
       </section>
       <section class="flex-items">
         <h2>All Products</h2>
-        <form action="">
+        <form>
+          <label for="search-name">Search by name:</label>
+          <input
+            type="search"
+            id="search-name"
+            name="name"
+            placeholder="Product name"
+          />
+          <label for="search-price">Maximum price:</label>
+          <input
+            type="number"
+            id="search-price"
+            name="price"
+            placeholder="Price"
+            min="0"
+            step=".01"
+          />
           <label for="sort">Sort products:</label>
           <select id="sort" name="sort">
             <option value="">Default order</option>
