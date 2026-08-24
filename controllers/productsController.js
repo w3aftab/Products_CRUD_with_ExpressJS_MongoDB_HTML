@@ -1,10 +1,14 @@
 import Product from "../models/Product.js";
 
 export const getProducts = async (req, res) => {
-  const { sort } = req.query;
+  const { sort, name, price } = req.query;
+  const queryObj = {
+    ...(name && { name: { $regex: name, $options: "i" } }),
+    ...(price && { price: { $lte: price } }),
+  };
   const sortString = sort?.replaceAll(",", " ") || "-createdAt";
   try {
-    const products = await Product.find().sort(sortString);
+    const products = await Product.find(queryObj).sort(sortString);
     res.status(200).send(products);
   } catch (error) {
     console.log("Products not found!", error);

@@ -20,6 +20,7 @@ a[type="button"] {
   display: inline-block;
   margin: 0 !important;
 }
+
 .flex {
   display: flex;
   justify-content: space-between;
@@ -74,6 +75,14 @@ button,
 }
 
 @media screen and (max-width: 720px) {
+  .product-filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .product-filters input,
+  .product-filters select {
+    width: 100%;
+  }
   .main.flex {
     display: block;
   }

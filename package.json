@@ -1,7 +1,7 @@
 {
   "name": "Products_CRUD_ExpressJS_HTML",
-  "version": "1.2.0",
-  "description": "",
+  "version": "1.3.0",
+  "description": "'Search by name' and 'Maximum price' feature added",
   "license": "ISC",
   "author": "Aftab",
   "type": "module",
